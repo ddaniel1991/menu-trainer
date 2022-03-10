@@ -1,22 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import {Routes, Route} from 'react-router-dom'
+import Dashboard from './pages/Dashboard';
+import Drinks from './pages/Drinks';
+import Food from './pages/Food';
+import Pairings from './pages/Pairings';
+import React from 'react';
+import NavBar from './components/NavBar';
+import Login from './components/Login';
+import AdminPage from './pages/AdminPage';
+import AdminFoodPage from './components/admin-components/AdminFoodPage';
+import AddFoodItemForm from './components/admin-components/AddFoodItemForm';
+import AdminDrinkPage from './components/admin-components/AdminDrinkPage';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div>
+      <header>
+        <NavBar/>
+        <Routes>
+          <Route exact path="/" element={<Dashboard/>} />
+          <Route exact path="/food" element={<Food/>} />
+          <Route exact path="/drinks" element={<Drinks/>} />
+          <Route exact path="/pairings" element={<Pairings/>} />
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/admin" element={<AdminPage />} />
+          <Route exact path='/admin/add' element={<AddFoodItemForm />} />
+          <Route exact path='/admin/food' element={<AdminFoodPage />} />
+          <Route exact path='/admin/drinks' element={<AdminDrinkPage />} />
+        </Routes>
+
+        
       </header>
     </div>
   );
