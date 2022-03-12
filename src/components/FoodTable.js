@@ -2,7 +2,6 @@ import React from 'react'
 import FoodTableItem from './FoodTableItem'
 import { Table,TableBody,TableCell,TableContainer,TableHead,TableRow, Paper, Container } from '@mui/material';
 import dishes from './food.json'
-import QuizMeButton from './QuizMeButton';
 
 
 function FoodTable() {

@@ -6,7 +6,7 @@
         "description": "Romaine Lettuce with our house-made ceaser dressing served with croutons and anchovies",
         "tags" : ["salad", "creamy", "seafood"],
         "ingredients": ["Grilled Chicken","Romaine Lettuce","Ceasear Dressing", "Croutons"],
-        "image": "../img/cesar-salad.jpg"
+        "image": "/static/img/cesar-salad.jpg"
         
 
     },
@@ -17,7 +17,7 @@
         "description": "Red Snapper crusted with cornmeal and served with cole slaw and french fries",
         "tags": ["seafood", "fried food", "savory"],
         "ingredients":["Red Snapper","French Fries","Cole Slaw"],
-        "image": "src/img/fish-and-chips.jpg"
+        "image": "/static/img/fish-and-chips.jpg"
     },
 
     {
@@ -26,7 +26,7 @@
         "description": "Two 4oz Patties with white cheddar cheese on potato roll served with french fries",
         "tags": ["sandwich", "beef", "burger"],
         "ingredients": ["Angus Beef","Potato Roll","LTOP","French Fries", "Garlic Aioli"],
-        "image": "src/img/smash-burger.jpg"
+        "image": "/static/img/smash-burger.jpg"
     }
 
 

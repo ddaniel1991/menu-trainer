@@ -1,7 +1,6 @@
 import * as React from 'react'
 import {FaAngleUp, FaAngleDown} from 'react-icons/fa';
-import { LoremIpsum } from 'react-lorem-ipsum';
-import {TableRow, TableCell, IconButton,Collapse, Box,Checkbox } from '@mui/material';
+import {TableRow, TableCell, IconButton,Collapse, Box,Checkbox, List, ListItem, Card, CardMedia } from '@mui/material';
 import {Link} from 'react-router-dom'
 
 function FoodTableItem(props) {
@@ -29,16 +28,53 @@ function FoodTableItem(props) {
           <TableCell align='center'><Checkbox /></TableCell>
         </TableRow>
         <TableRow>
-          <TableCell style={{ paddingBottom: 0, paddingTop: 0, }} colSpan={6}>
-            <Collapse in={open} timeout="auto" unmountOnExit>
-              <Box sx={{margin: 1}}>
-                <div className="text-wrapper">
-                  <LoremIpsum p={2} />
-                </div>
-              </Box>
+        <TableCell colSpan={3} style={{ paddingBottom: 0, paddingTop: 0, }} >
+                <Collapse in={open} timeout="auto" unmountOnExit>
+                  <Box sx={{margin: 1}}>
+                    <div>
+                      <Card>
+                        <CardMedia 
+                          component='img'
+                          height='140'
+                          image={process.env.PUBLIC_URL + drink.image}
+                          alt={drink.name}
+                        />
+                      </Card>
+                    </div>
+                  </Box>
 
-            </Collapse>
-          </TableCell>
+                </Collapse>
+              </TableCell>
+              <TableCell colSpan={1} style={{ paddingBottom: 0, paddingTop: 0, }} >
+                <Collapse in={open} timeout="auto" unmountOnExit>
+                  <Box sx={{margin: 1}}> 
+                    <div>
+                      <h4 className='center-text underline'>Ingredients:</h4>
+                      <List>
+                        {drink.ingredients.map((ingredient) => (
+                          <ListItem id='ingredient-list' key={ingredient}>{ ingredient }</ListItem>
+                        ))}
+                      </List>
+                    </div>
+                  </Box>
+                </Collapse>
+              </TableCell>
+              <TableCell style={{ paddingBOttom: 0, paddingTop: 0}}>
+                <Collapse in={open} timeout="auto" unmountOnExit>
+                  <Box sx={{margin:1}}> 
+                    <div>
+                      <h4 className='underline'>Pairs With:</h4>
+                    </div>
+                    <List>
+                      <ListItem>Dish 1</ListItem>
+                      <ListItem>Dish 2</ListItem>
+                      <ListItem>Dish 3</ListItem> 
+                    </List>
+                  </Box>
+                
+                </Collapse>
+
+              </TableCell>
 
         </TableRow>
       </>

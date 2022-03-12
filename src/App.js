@@ -10,6 +10,7 @@ import AdminPage from './pages/AdminPage';
 import AdminFoodPage from './components/admin-components/AdminFoodPage';
 import AddFoodItemForm from './components/admin-components/AddFoodItemForm';
 import AdminDrinkPage from './components/admin-components/AdminDrinkPage';
+import  Quiz  from './pages/Quiz';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route exact path='/admin/add' element={<AddFoodItemForm />} />
           <Route exact path='/admin/food' element={<AdminFoodPage />} />
           <Route exact path='/admin/drinks' element={<AdminDrinkPage />} />
+          <Route exact path='/quiz' element={<Quiz />} />
         </Routes>
 
         

@@ -6,17 +6,18 @@ import ReactTagInput from '@pathofdev/react-tag-input'
 
 
 
-
 const AddFoodItemForm = () => {
 
     const defaultValues = {
         name: "",
         description: "",
         tags: [],
+        ingredients: []
     };
 
   const [formValues,setFormValues] = useState(defaultValues);
   const [tags, setTags] = useState([])
+  const [ingredients,setIngredients] = useState([])
 
   const handleInputChange = (e) => {
       const {name, value} = e.target;
@@ -27,10 +28,16 @@ const AddFoodItemForm = () => {
       });
   };
 
-  const handleaddition = (tags) => {
+  const handleTagAddition = (tags) => {
         formValues.tags = tags;
         console.log(tags)
   }
+  const handleIngredientAddition = (ingredients) => {
+    formValues.ingredients = ingredients;
+    console.log(ingredients)
+}
+
+
   
 
   return (
@@ -43,6 +50,7 @@ const AddFoodItemForm = () => {
           }} >
             <h3>Please Complete All Fields</h3>
             <FormControl margin='normal' fullWidth>
+                <h4>Dish Name:</h4>
                 <TextField 
                     variant='outlined' 
                     id='dishName' 
@@ -54,6 +62,7 @@ const AddFoodItemForm = () => {
                 />
             </FormControl>
             <FormControl margin='normal' fullWidth>    
+                <h4>Description:</h4>
                 <TextField
                     variant='outlined'
                     id='description'
@@ -64,15 +73,26 @@ const AddFoodItemForm = () => {
                     onChange={handleInputChange}
                     multiline
                     rows={3}
-
                 />
             </FormControl>
             <FormControl fullWidth>
+                <h4>Ingredients:</h4>
+                <ReactTagInput 
+                    tags={ingredients}
+                    value={formValues.ingredients}
+                    onChange={ (newIngredients) => setIngredients(newIngredients)}
+                    handleaddition={handleIngredientAddition(ingredients)}
+                    removeOnBackspace={true}
+                    margin='normal'
+                />
+            </FormControl>
+            <FormControl fullWidth>
+                <h4>Flavor Profile:</h4>
                 <ReactTagInput 
                     tags={tags}
                     value={formValues.tags}
                     onChange={ (newTags) => setTags(newTags)}
-                    handleaddition={handleaddition(tags)}
+                    handleaddition={handleTagAddition(tags)}
                     removeOnBackspace={true}
                     margin='normal'
                 />

@@ -4,8 +4,8 @@ import {Button, Container} from '@mui/material'
 const QuizMeButton = () => {
   return (
     <div>   
-      <Container margin='normal' align='right'>
-        <Button variant='contained' color='success'>Quiz Me</Button>
+      <Container className='mb-3' margin='normal' align='right'>
+        <Button href='/quiz' variant='contained' color='success'>Quiz Me</Button>
       </Container>
     </div>
   )

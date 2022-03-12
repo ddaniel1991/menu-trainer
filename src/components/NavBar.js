@@ -21,6 +21,7 @@ const NavBar = () => {
                             <NavLink href="/drinks" className='link-nav'>Drinks</NavLink>
                             <NavLink href="/pairings" className='link-nav'>Pairings</NavLink>    
                             <NavLink href="/admin" className='link-nav'>Admin</NavLink>
+                            <NavLink href="/quiz" className="link-nav">Quiz</NavLink>
                         </Nav>
                     </Navbar.Collapse>
                     <NavLink href="/login" className='link-nav justify-content-right'>Log In</NavLink>
