@@ -6,15 +6,14 @@ import FlashCard from '../components/FlashCard'
 
 
 
-const Quiz = () => {
+const Quiz = ({dishes}) => {
 
 
 
   return (
     <div>
-        <h2>Hello From the Quiz page</h2>
         <Container>
-            <FlashCard />
+            <FlashCard dishes={dishes} />
         </Container>
     </div>
   )

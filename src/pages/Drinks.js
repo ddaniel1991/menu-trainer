@@ -2,13 +2,12 @@ import React from 'react'
 import DrinkTable from '../components/DrinkTable'
 import QuizMeButton from '../components/QuizMeButton'
 
-const Drinks = () => {
+const Drinks = ({drinks}) => {
   return (
     <div>
-      <h2>Drinks Go Here!!</h2>
-      <p>Cheers!!</p>
+      <h2>Drinks</h2>
       <QuizMeButton />
-      <DrinkTable />
+      <DrinkTable drinks={drinks} />
     </div>
   )
 }

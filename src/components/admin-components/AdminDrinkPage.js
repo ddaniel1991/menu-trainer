@@ -2,11 +2,11 @@ import React from 'react'
 import DrinkTable from '../DrinkTable'
 import AddNewButton from './AddNewButton'
 
-const AdminFoodPage = () => {
+const AdminFoodPage = ({drinks}) => {
   return (
     <div>
       <AddNewButton />  
-      <DrinkTable />
+      <DrinkTable drinks={drinks} />
     </div>
   )
 }

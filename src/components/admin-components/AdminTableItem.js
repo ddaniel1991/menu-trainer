@@ -1,9 +1,9 @@
 import * as React from 'react'
 import {FaAngleUp, FaAngleDown} from 'react-icons/fa';
-import {TableRow, TableCell, IconButton,Collapse, Box,Checkbox,Card,CardMedia,List,ListItem } from '@mui/material';
+import {TableRow, TableCell, IconButton,Collapse, Box,Card,CardMedia,List,ListItem } from '@mui/material';
 import {Link} from 'react-router-dom'
 
-function FoodTableItem(props) {
+function AdminTableItem(props) {
   const { dish } = props;
   const [open, setOpen] = React.useState(false);
   console.log({dish});
@@ -23,9 +23,9 @@ function FoodTableItem(props) {
           <TableCell component="th" scope="row">
             {dish.id}
           </TableCell>
-          <TableCell><Link to={`/food/${dish.name}`}>{dish.name}</Link></TableCell>
+          <TableCell><Link to='#'>{dish.name}</Link></TableCell>
           <TableCell>{dish.description}</TableCell>
-          <TableCell align='center'><Checkbox /></TableCell>
+          <TableCell align='center'></TableCell>
         </TableRow>
         <TableRow>
               <TableCell colSpan={3} style={{ paddingBottom: 0, paddingTop: 0, }} >
@@ -50,7 +50,7 @@ function FoodTableItem(props) {
                   <Box sx={{margin: 1}}> 
                     <div>
                       <h4 className='center-text underline'>Ingredients:</h4>
-                      <List dense={true}>
+                      <List>
                         {dish.ingredients.map((ingredient) => (
                           <ListItem id='ingredient-list' key={ingredient}>{ ingredient }</ListItem>
                         ))}
@@ -65,11 +65,11 @@ function FoodTableItem(props) {
                     <div>
                       <h4 className='underline'>Pairs With:</h4>
                     </div>
-                    <List dense={true}>
-                    {dish.tags.map((tag) => (
-                          <ListItem id='ingredient-list' key={tag}>{ tag }</ListItem>
-                        ))}
-                    </List>
+                    <ul>
+                      <li>Drink 1</li>
+                      <li>Drink 2</li>
+                      <li>Drink 3</li> 
+                    </ul>
                   </Box>
                 
                 </Collapse>
@@ -82,4 +82,4 @@ function FoodTableItem(props) {
   );
 }
 
-export default FoodTableItem
+export default AdminTableItem

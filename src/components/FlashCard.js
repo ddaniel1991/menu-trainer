@@ -2,15 +2,15 @@ import React, {useState} from 'react'
 import ReactCardFlip from 'react-card-flip'
 import FlashcardBack from './FlashcardBack'
 import FlashcardFront from './FlashcardFront'
-import { Button,ButtonGroup, Box, Paper } from '@mui/material'
-import dishes from '../components/food.json'
+import { Button,ButtonGroup, Box, Container } from '@mui/material'
 
-const FlashCard = () => {
+const FlashCard = ({dishes}) => {
     
+    console.log({dishes});
+
     const [flipped,setFlipped] = useState(false)
     const [index, setIndex] = useState(0);
     const dishData = [...dishes]
-
 
     console.log(dishData);
 
@@ -31,37 +31,27 @@ const FlashCard = () => {
   return (
       
     <div>
-        <Box
-            sx={{
-                display: 'flex-center',
-                '& > :not(style)': {
-                    m: 1,
-                    width: '70%',
-                    height: '20em',
-                    marginLeft: 'auto',
-                    marginRight: 'auto'
-                },
-            }}
-        >
-            <Paper elevation={3}>
-                
-                <ReactCardFlip isFlipped={flipped} flipDirection='horizontal'>
-                        <div>
-                            <FlashcardFront dish={dishes[index]} />
-                            <button onClick={() => setFlipped((prev) => !prev)}> Flip</button>
-                        </div>
-                        <div>
-                            <FlashcardBack dish={dishes[index]} />
-                            <button onClick={() => setFlipped((prev) => !prev)}>Flip</button>
-                        </div>
-                </ReactCardFlip>
-            </Paper>
-        </Box>
+        
+        <Container>
+            <ButtonGroup className='mt-4' margin='normal'>
+                <Button onClick={() => handleCardCycle(-1)} variant='contained' color='error'>Back</Button>
+                <Button onClick={() => setFlipped((prev) => !prev)} variant='contained'>Flip</Button>
+                <Button onClick={() => handleCardCycle(1) } variant='contained' color='success'>Next</Button>
+            </ButtonGroup>    
+        </Container>
+        <Container>  
+            <ReactCardFlip isFlipped={flipped} flipDirection='horizontal'>
+                    <div>
+                        <FlashcardFront dish={dishes[index]} />
+                    </div>
+                    <div>
+                        <FlashcardBack dish={dishes[index]} />
+                    </div>
+            </ReactCardFlip>
+        </Container>    
 
-        <ButtonGroup margin='normal'>
-            <Button onClick={() => handleCardCycle(-1)} variant='contained' color='error'>Back</Button>
-            <Button onClick={() => handleCardCycle(1) } variant='contained' color='success'>Next</Button>
-        </ButtonGroup>    </div>
+
+        </div>
 
 
   )}

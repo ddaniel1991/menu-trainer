@@ -2,14 +2,13 @@ import React from 'react'
 import FoodTable from '../components/FoodTable'
 import QuizMeButton from '../components/QuizMeButton'
 
-const Food = () => {
+const Food = ({dishes}) => {
   return (
     <div>
-      <h2>Food Goes Here!!</h2>
-      <p>Eat Up!!!</p>
+      <h2>Menu Items</h2>
       <QuizMeButton />
 
-      <FoodTable />
+      <FoodTable dishes={dishes}/>
     </div>
   )
 }

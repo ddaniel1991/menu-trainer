@@ -1,10 +1,9 @@
 import React from 'react'
 import DrinkTableItem from './DrinkTableItem'
 import { Table,TableBody,TableCell,TableContainer,TableHead,TableRow, Paper, Container } from '@mui/material';
-import drinks from './drinks.json'
 
 
-function DrinkTable() {
+function DrinkTable({drinks}) {
     console.log({drinks})
 
     return (

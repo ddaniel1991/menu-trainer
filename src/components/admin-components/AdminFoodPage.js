@@ -1,12 +1,12 @@
 import React from 'react'
-import FoodTable from '../FoodTable'
 import AddNewButton from './AddNewButton'
+import AdminTable from './AdminTable'
 
-const AdminFoodPage = () => {
+const AdminFoodPage = ({dishes}) => {
   return (
     <div>
       <AddNewButton />  
-      <FoodTable />
+      <AdminTable dishes={dishes} />
     </div>
   )
 }

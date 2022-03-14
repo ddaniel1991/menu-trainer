@@ -1,12 +1,12 @@
 import React from 'react'
-import FoodTableItem from './FoodTableItem'
-import { Table,TableBody,TableCell,TableContainer,TableHead,TableRow, Paper, Container } from '@mui/material';
+import {Container, Table, TableContainer, TableCell,TableRow, TableHead, TableBody,Paper} from '@mui/material'
+import dishes from '../food.json'
+// import FoodTableItem from '../FoodTableItem'
+import AdminTableItem from './AdminTableItem'
 
-
-function FoodTable({dishes}) {
-    console.log({dishes})
-
-    return (
+const AdminTable = () => {
+  return (
+    <div>
         <Container>
 
             <TableContainer margin='normal' component={Paper}>
@@ -17,18 +17,19 @@ function FoodTable({dishes}) {
                         <TableCell>#</TableCell>
                         <TableCell align="left">Name</TableCell>
                         <TableCell align="center">Description</TableCell>
-                        <TableCell align="left">Add To Quiz</TableCell>
+                        <TableCell />
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {dishes.map((dish) => (
-                          <FoodTableItem key={dish.id} dish={dish} />
+                          <AdminTableItem key={dish.id} dish={dish} />
                         ))}
                     </TableBody>
                 </Table>
             </TableContainer>
         </Container>
-    );
-  }
+    </div>
+  )
+}
 
-export default FoodTable;
+export default AdminTable

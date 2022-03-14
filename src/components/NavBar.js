@@ -12,7 +12,7 @@ const NavBar = () => {
             <Navbar bg="dark" variant="danger" expand="lg" fixed='top'>
                 <Container>
                     <Navbar.Toggle  aria-controls="basic-navbar-nav"><FaBars color='red'/></Navbar.Toggle> 
-                    <NavbarBrand path="/"><MdRestaurantMenu color="red"/></NavbarBrand>
+                    <NavbarBrand href="/"><MdRestaurantMenu color="red"/></NavbarBrand>
 
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
